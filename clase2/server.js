@@ -12,7 +12,7 @@ const processRequest = (req, res) => {
     fs.readFile('./imagen.png', (err, data) => {
       if (err) {
         res.statusCode = 500
-        res.end('<h1>Internal server error')
+        res.end('<h1>Internal server error</h1>')
       } else {
         res.setHeader('Content-Type', 'image/png')
         res.end(data)
