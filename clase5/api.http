@@ -1,0 +1,37 @@
+### Recuperar todas las peliculas
+GET http://localhost:3000/movies
+
+### Recuperar una pelicula por id
+GET http://localhost:3000/movies/bf0cfc3e-5626-11ee-a4ec-f1bde1304def
+
+### Recuperar una pelicula por un genero
+GET http://localhost:3000/movies?genre=action
+
+### Crear una pelicula
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "sql": "SELECT * FROM movies WHERE genre LIKE '%action%'",
+    "title": "The Godfather 2",
+    "year": 1972,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://i.imgur.com/Uzvny9I.jpg",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "rate": 5.0
+}
+
+### Actualizar una pelicula
+PATCH  http://localhost:3000/movies/9e6106f0-848b-4810-a11a-3d832a5610f9
+Content-Type: application/json
+
+{ 
+    "year": 2000
+}
+
+### Eliminar una pelicula
+DELETE http://localhost:3000/movies/3453548c-562e-11ee-a4ec-f1bde1304def
